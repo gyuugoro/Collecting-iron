@@ -1,25 +1,47 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Collecting iron</title>
-  </head>
-  <body style="text-align: center">
-    <canvas id="unity-canvas" width=960 height=600 style="width: 960px; height: 600px; background: #212121"></canvas>
-    <script src="Build/WebGL.loader.js"></script>
-    <script>
-      createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/WebGL.data.unityweb",
-        frameworkUrl: "Build/WebGL.framework.js.unityweb",
-        codeUrl: "Build/WebGL.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Collecting iron",
-        productVersion: "1.0",
-        // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
-        // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
-      });
-    </script>
-  </body>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Collecting iron</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/path/to/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/path/to/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/path/to/icons/favicon-16x16.png">
+  <link rel="manifest" href="/path/to/icons/site.webmanifest">
+  <link rel="mask-icon" href="/path/to/icons/safari-pinned-tab.svg" color="#ff9800">
+  <link rel="shortcut icon" href="/path/to/icons/favicon.ico">
+  <meta name="msapplication-TileColor" content="#212121">
+  <meta name="msapplication-config" content="/path/to/icons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body style="text-align: center">
+  <canvas id="unity-canvas" style="background: #212121"></canvas>
+
+  <style>
+    html, body, #unity_canvas{
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  </style>
+
+  <script src="Build/WebGL.loader.js"></script>
+  <script>
+    createUnityInstance(document.querySelector("#unity-canvas"), {
+      dataUrl: "Build/WebGL.data.unityweb",
+      frameworkUrl: "Build/WebGL.framework.js.unityweb",
+      codeUrl: "Build/WebGL.wasm.unityweb",
+      streamingAssetsUrl: "StreamingAssets",
+      companyName: "DefaultCompany",
+      productName: "Collecting iron",
+      productVersion: "1.0",
+      // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+      // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
+    });
+  </script>
+</body>
+
 </html>
